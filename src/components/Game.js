@@ -19,7 +19,8 @@ const Game = (props) => {
             </div>
             <div className="right">
             <button onClick={clickStart}>Escolher Palavra</button>
-            <h1>{wordShown}</h1>
+            <h1>{`word: ${word}, length: ${word.length}`}</h1>
+            <h1>{`wordShown: ${wordShown}, length: ${wordShown.length}`}</h1>
             </div>
         </div>
     );
