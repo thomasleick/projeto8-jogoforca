@@ -5,9 +5,15 @@ const App = () => {
 
   return (
     <main className="App">
-      <div className="left"></div>
-      <div className="right"></div>\
-      <div className="letters"></div>
+      <div className="container">
+        <div className="left"></div>
+        <div className="right"></div>
+      </div>
+      <div className="letters">
+        {alfabeto.map(letter => { 
+          return <button key={letter}>{letter.toUpperCase()}</button>
+        })}
+      </div>
     </main>
   );
 }
