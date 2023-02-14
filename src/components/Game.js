@@ -1,11 +1,25 @@
-const Game = () => {
+const Game = (props) => {
+
+    const { errors, word, wordShown, clickStart } = props;
+
+    const imgs = [
+        "../assets/forca0.png",
+        "../assets/forca1.png",
+        "../assets/forca2.png",
+        "../assets/forca3.png",
+        "../assets/forca4.png",
+        "../assets/forca5.png",
+        "../assets/forca6.png"
+    ];
+
     return (
         <div className="container top">
             <div className="left">
-            <img src="../assets/forca0.png" />
+            <img src={imgs[errors]} alt="Jogo da Forca"/>
             </div>
             <div className="right">
-            <button >Escolher Palavra</button>
+            <button onClick={clickStart}>Escolher Palavra</button>
+            <h1>{wordShown}</h1>
             </div>
         </div>
     );
