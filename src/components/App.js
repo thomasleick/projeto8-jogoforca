@@ -5,14 +5,20 @@ const App = () => {
 
   return (
     <main className="App">
-      <div className="container">
-        <div className="left"></div>
-        <div className="right"></div>
+      <div className="container top">
+        <div className="left">
+          <img src="../assets/forca0.png" />
+        </div>
+        <div className="right">
+          <button >Escolher Palavra</button>
+        </div>
       </div>
-      <div className="letters">
-        {alfabeto.map(letter => { 
-          return <button key={letter}>{letter.toUpperCase()}</button>
-        })}
+      <div className="container">
+        <div className="letters">
+          {alfabeto.map(letter => { 
+            return <button key={letter} disabled={true}>{letter.toUpperCase()}</button>
+          })}
+        </div>
       </div>
     </main>
   );
