@@ -1,6 +1,6 @@
 const Game = (props) => {
 
-    const { errors, word, wordShown, clickStart, disabled } = props;
+    const { errors, wordShown, clickStart, disabled, gameOver, isVictory } = props;
 
     const imgs = [
         "../assets/forca0.png",
@@ -19,7 +19,7 @@ const Game = (props) => {
             </div>
             <div className="right">
             <button onClick={clickStart}>Escolher Palavra</button>
-            <h1>{!disabled ? (wordShown ? wordShown.join(" ") : "") : ""}</h1>
+            <h1 style={gameOver ? isVictory ? {color: "green"} : {color: "red"} : {color: "black"}}>{(!disabled || gameOver) ? (wordShown ? wordShown.join(" ") : "") : ""}</h1>
             </div>
         </div>
     );
