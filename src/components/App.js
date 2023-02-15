@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Game from "./Game";
 import Letters from "./Letters";
+import Guess from "./Guess";
 import palavras from "../palavras"
 
 
@@ -59,6 +60,7 @@ const App = () => {
     <main className="App">
       <Game errors={errors} wordShown={wordShown} clickStart={() => chooseWord()} disabled={disabled} gameOver={gameOver} isVictory={isVictory}/>
       <Letters disabled={disabled} chosenLetters={chosenLetters} handleButtonClick={handleButtonClick}/>
+      <Guess />
     </main>
   );
 }
