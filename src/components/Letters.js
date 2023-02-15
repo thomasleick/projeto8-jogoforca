@@ -12,6 +12,7 @@ const Letters = (props) => {
                 key={letter}
                 onClick={() => handleButtonClick(letter)}
                 disabled={disabled || isChosen}
+                data-test="letter"
               >
                 {letter.toUpperCase()}
               </button>
