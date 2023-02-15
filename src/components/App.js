@@ -48,6 +48,7 @@ const App = () => {
   if (errors === 6 && !disabled) {
     setGameOver(true)
     setDisabled(true)
+    setWordShown(word.join("").toUpperCase().split(""))
   } else if (wordShown.join("").toLowerCase() === word.join("") && !disabled) {
     setIsVictory(true)
     setGameOver(true)

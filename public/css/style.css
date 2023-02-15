@@ -7,7 +7,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly; 
-  background-color: black;
   width: 100%;
 }
 .top {
@@ -15,15 +14,13 @@ body {
 }
 
 .left {
-  background-color: blue;
-  width: calc(55% - 78px);
+  width: calc(51% - 78px);
   height: calc(100% - 118px);
   padding: 59px 38px;
 }
 
 .right {
-  background-color: red;
-  width: calc(45% - 106px);
+  width: calc(49% - 106px);
   height: calc(100% - 178px);
   display: flex;
   flex-direction: column;
@@ -38,7 +35,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: pink;
   max-width: 676px;
 
 }
@@ -78,4 +74,12 @@ body {
   font-size: 20px;
   line-height: 23px;
   color: #FFFFFF;
+}
+
+h1 {
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 50px;
+line-height: 68px;
 }
