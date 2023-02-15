@@ -24,7 +24,6 @@ const App = () => {
     setWord(newWord.split(""))
     setWordShown(Array(newWord.length).fill('_'))
     setChosenLetters([])
-    console.log(newWord)
   }
 
   const handleButtonClick = (letter) => {
