@@ -15,7 +15,7 @@ const Game = (props) => {
     return (
         <div className="container top">
             <div className="left">
-            <img src={imgs[errors]} alt="Jogo da Forca"/>
+            <img src={imgs[errors]} alt="Jogo da Forca" data-test="game-image"/>
             </div>
             <div className="right">
             <button onClick={clickStart} data-test="choose-word">Escolher Palavra</button>
