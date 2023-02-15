@@ -8,7 +8,7 @@ const App = () => {
 
   const [disabled, setDisabled] = useState(true)
   const [errors, setErrors] = useState(0)
-  const [word, setWord] = useState("")
+  const [word, setWord] = useState([])
   const [wordShown, setWordShown] = useState("")
   const [chosenLetters, setChosenLetters] = useState([]);
 
@@ -17,13 +17,30 @@ const App = () => {
     setErrors(0)
     setDisabled(false)
     const newWord = palavras[Math.floor(Math.random() * (palavras.length - 1))]
-    setWord(newWord)
+    setWord(newWord.split(""))
     setWordShown(Array(newWord.length).fill('_'))
     setChosenLetters([])
+    console.log(newWord)
   }
 
   const handleButtonClick = (letter) => {
     setChosenLetters([ ...chosenLetters, letter ]);
+
+    if (word.includes(letter.toLowerCase())) {
+      let newWordShown = [...wordShown];
+      word.forEach((l, pos) => {
+        if (letter === l)
+          newWordShown[pos] = l.toUpperCase()  
+      })
+      setWordShown(newWordShown)
+    }
+    else {
+      const newErrors = errors + 1
+      setErrors(newErrors)
+    }
+      
+
+    
   };
 
   return (
