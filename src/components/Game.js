@@ -19,7 +19,11 @@ const Game = (props) => {
             </div>
             <div className="right">
             <button onClick={clickStart} data-test="choose-word">Escolher Palavra</button>
-            <h1 style={gameOver ? isVictory ? {color: "green"} : {color: "red"} : {color: "black"}}>{(!disabled || gameOver) ? (wordShown ? wordShown.join(" ") : "") : ""}</h1>
+            <h1 style={gameOver ? isVictory ? {color: "green"} : {color: "red"} : {color: "black"}}
+                data-test="word"
+            >
+                {(!disabled || gameOver) ? (wordShown ? wordShown.join(" ") : "") : ""}
+            </h1>
             </div>
         </div>
     );
