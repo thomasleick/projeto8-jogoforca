@@ -22,10 +22,14 @@ const App = () => {
     setChosenLetters([])
   }
 
+  const handleButtonClick = (letter) => {
+    setChosenLetters([ ...chosenLetters, letter ]);
+  };
+
   return (
     <main className="App">
       <Game errors={errors} word={word} wordShown={wordShown} clickStart={() => chooseWord()} disabled={disabled}/>
-      <Letters disabled={disabled} chosenLetters={chosenLetters} setChosenLetters={setChosenLetters}/>
+      <Letters disabled={disabled} chosenLetters={chosenLetters} handleButtonClick={handleButtonClick}/>
     </main>
   );
 }
