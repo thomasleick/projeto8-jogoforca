@@ -18,7 +18,7 @@ const Game = (props) => {
             <img src={imgs[errors]} alt="Jogo da Forca"/>
             </div>
             <div className="right">
-            <button onClick={clickStart}>Escolher Palavra</button>
+            <button onClick={clickStart} data-test="choose-word">Escolher Palavra</button>
             <h1 style={gameOver ? isVictory ? {color: "green"} : {color: "red"} : {color: "black"}}>{(!disabled || gameOver) ? (wordShown ? wordShown.join(" ") : "") : ""}</h1>
             </div>
         </div>
