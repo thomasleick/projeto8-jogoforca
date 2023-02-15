@@ -33,7 +33,7 @@ const App = () => {
       let newWordShown = [...wordShown];
       word.forEach((l, pos) => {
         if (letter === l)
-          newWordShown[pos] = l.toUpperCase()  
+          newWordShown[pos] = l  
       })
       setWordShown(newWordShown)
     }
@@ -47,8 +47,8 @@ const App = () => {
   if (errors === 6 && !disabled) {
     setGameOver(true)
     setDisabled(true)
-    setWordShown(word.join("").toUpperCase().split(""))
-  } else if (wordShown.join("").toLowerCase() === word.join("") && !disabled) {
+    setWordShown(word.join("").split(""))
+  } else if (wordShown.join("") === word.join("") && !disabled) {
     setIsVictory(true)
     setGameOver(true)
     setDisabled(true)
