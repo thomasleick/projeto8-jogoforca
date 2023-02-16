@@ -27,15 +27,17 @@ const App = () => {
     setWordShown(Array(newWord.length).fill('_'))
     setChosenLetters([])
   }
-
+  
   const handleButtonClick = (letter) => {
     setChosenLetters([ ...chosenLetters, letter ]);
 
-    if (word.includes(letter.toLowerCase())) {
+    const wordNormalized = word.join("").normalize('NFD').replace(/[\u0300-\u036f]/g, "").split("")
+    console.log(wordNormalized)
+    if (wordNormalized.includes(letter.toLowerCase())) {
       let newWordShown = [...wordShown];
-      word.forEach((l, pos) => {
+      wordNormalized.forEach((l, pos) => {
         if (letter === l)
-          newWordShown[pos] = l  
+          newWordShown[pos] = word[pos]  
       })
       setWordShown(newWordShown)
     }
