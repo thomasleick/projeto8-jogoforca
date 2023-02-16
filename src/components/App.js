@@ -60,6 +60,7 @@ const App = () => {
     setWordShown(word.join("").split(""))
     setGameOver(true)
     setDisabled(true)
+    setGuess("")
     victory ? setIsVictory(true) : setIsVictory(false)
   }
 
