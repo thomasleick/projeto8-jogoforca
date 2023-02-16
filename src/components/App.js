@@ -32,7 +32,6 @@ const App = () => {
     setChosenLetters([ ...chosenLetters, letter ]);
 
     const wordNormalized = word.join("").normalize('NFD').replace(/[\u0300-\u036f]/g, "").split("")
-    console.log(wordNormalized)
     if (wordNormalized.includes(letter.toLowerCase())) {
       let newWordShown = [...wordShown];
       wordNormalized.forEach((l, pos) => {
