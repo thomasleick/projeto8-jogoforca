@@ -47,18 +47,17 @@ const App = () => {
 
   const handleGuessButton = () => {
     if (guess.toLowerCase() === word.join("")) {
-      setWordShown(word.join("").split(""))
       finishGame(true)
     }
     else {
       setErrors(6)
-      setWordShown(word.join("").split(""))
       finishGame(false)
     }
     
   }
 
   const finishGame = (victory) => {
+    setWordShown(word.join("").split(""))
     setGameOver(true)
     setDisabled(true)
     victory ? setIsVictory(true) : setIsVictory(false)
@@ -67,7 +66,6 @@ const App = () => {
   //Check win/loose
   if (errors === 6 && !disabled) {
     finishGame(false)
-    setWordShown(word.join("").split(""))
   } else if (wordShown.join("") === word.join("") && !disabled) {
     finishGame(true)
   }
