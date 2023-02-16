@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Guess = () => {
+const Guess = (params) => {
+    const { disabled, guess, setGuess, handleGuessButton } = params
     return (
         <div className="guess">
             <h2>Já sei a palavra!</h2>
-            <input></input>
-            <button>Chutar</button>
+            <input onChange={e => setGuess(e.target.value)} value={guess}></input>
+            <button onClick={() => handleGuessButton()} disabled={disabled}>Chutar</button>
         </div>
     );
 };
