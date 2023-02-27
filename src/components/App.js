@@ -3,7 +3,17 @@ import Game from "./Game";
 import Letters from "./Letters";
 import Guess from "./Guess";
 import palavras from "../palavras"
+import styled from "styled-components";
 
+const Main = styled.main`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+`
 
 const App = () => {
 
@@ -74,11 +84,11 @@ const App = () => {
 
 
   return (
-    <main className="App">
+    <Main>
       <Game errors={errors} wordShown={wordShown} clickStart={() => chooseWord()} disabled={disabled} gameOver={gameOver} isVictory={isVictory}/>
       <Letters disabled={disabled} chosenLetters={chosenLetters} handleButtonClick={handleButtonClick}/>
       <Guess disabled={disabled} guess={guess} setGuess={setGuess} handleGuessButton={handleGuessButton}/>
-    </main>
+    </Main>
   );
 }
 
